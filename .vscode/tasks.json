@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "1. Install packages",
+      "type": "shell",
+      "command": "npm install",
+      "problemMatcher": []
+    },
+    {
+      "label": "2. Start ThumbStop website",
+      "type": "shell",
+      "command": "npm run dev",
+      "dependsOn": ["1. Install packages"],
+      "dependsOrder": "sequence",
+      "isBackground": true,
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
+}

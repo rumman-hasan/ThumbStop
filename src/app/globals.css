@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-brand-ink text-brand-mist antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid #10a9d1;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  select.input option {
+    background-color: #0a1a33;
+    color: #f3f8fc;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply btn bg-brand-cyan text-brand-ink hover:bg-brand-cyanSoft;
+  }
+  .btn-royal {
+    @apply btn bg-brand-royal text-white hover:bg-brand-royalBright;
+  }
+  .btn-outline {
+    @apply btn border border-white/20 text-white hover:border-brand-cyan hover:text-brand-cyan;
+  }
+  .btn-sm {
+    @apply !px-3 !py-1.5 !text-xs;
+  }
+  .btn-danger {
+    @apply btn border border-red-400/40 text-red-300 hover:bg-red-500/10;
+  }
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.2em] text-brand-cyan;
+  }
+  .card {
+    @apply rounded-xl border border-white/10 bg-brand-surface;
+  }
+  .label {
+    @apply mb-1 block text-xs font-semibold uppercase tracking-wider text-brand-muted;
+  }
+  .input {
+    @apply w-full rounded-md border border-white/15 bg-brand-ink/60 px-3.5 py-2.5 text-sm text-white placeholder:text-white/40 focus:border-brand-cyan focus:outline-none focus:ring-2 focus:ring-brand-cyan/30;
+  }
+  .data {
+    @apply w-full text-left text-sm;
+  }
+  .data th {
+    @apply border-b border-white/10 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-brand-muted;
+  }
+  .data td {
+    @apply border-b border-white/5 px-3 py-3 align-top text-white/90;
+  }
+  .bg-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse at 30% 20%, black 30%, transparent 75%);
+    mask-image: radial-gradient(ellipse at 30% 20%, black 30%, transparent 75%);
+  }
+}
